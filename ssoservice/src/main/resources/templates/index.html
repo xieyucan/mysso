@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+    <script type="application/javascript">
+        let script = document.createElement('script');
+        script.setAttribute('src', 'http://myservice1.com/login?token=[[${abc}]]');
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        script = document.createElement('script');
+        script.setAttribute('src', 'http://myservice2.com/login?token=[[${abc}]]');
+        document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+</head>
+<body>
+sso-[[${msg}]]
+<br>
+<span th:text="${msg}"></span>
+</body>
+</html>
